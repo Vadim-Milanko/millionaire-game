@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 
 import ActionButton from '@/shared/components/ActionButton/ActionButton';
@@ -19,12 +20,14 @@ export default function TotalScore() {
   };
 
   return (
-    <div className={styles.text}>
-      <p className={styles.title}>Total score:</p>
+      <Suspense>
+          <div className={styles.text}>
+              <p className={styles.title}>Total score:</p>
 
-      <p className={styles.score}>{USDFormatter(score)} earned</p>
+              <p className={styles.score}>{USDFormatter(score)} earned</p>
 
-      <ActionButton title="Try again" onBtnClick={handleNavigateToGame} />
-    </div>
+              <ActionButton title="Try again" onBtnClick={handleNavigateToGame}/>
+          </div>
+      </Suspense>
   );
 }

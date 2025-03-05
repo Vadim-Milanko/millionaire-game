@@ -25,7 +25,7 @@ This project is a web version of the "Who Wants to Be a Millionaire" game, imple
 1. Clone the repository
 
 ```bash
-git clone ------------
+git clone git@github.com:Vadim-Milanko/millionaire-game.git
 ```
 
 2. Install dependencies
@@ -54,15 +54,7 @@ yarn build && yarn start
 npm run build && npm start
 ```
 
-## 🔍 Linting and Testing
-
-Run ESLint
-
-```bash
-yarn lint
-# or
-npm run lint
-```
+## 🔍 Testing
 
 Run unit tests
 
