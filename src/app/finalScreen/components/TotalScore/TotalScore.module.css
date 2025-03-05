@@ -1,0 +1,30 @@
+.text {
+    max-width: 490px;
+    width: 100%;
+}
+
+.title {
+    color: var(--black-40);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.score {
+    margin-bottom: 4rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .text {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .score {
+        font-size: 2rem;
+    }
+}

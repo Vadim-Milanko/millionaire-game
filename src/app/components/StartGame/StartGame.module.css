@@ -1,0 +1,16 @@
+.text {
+    max-width: 490px;
+    width: 100%;
+}
+
+.title {
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 1024px) {
+    .title {
+        text-align: center;
+        font-size: 2rem;
+    }
+}

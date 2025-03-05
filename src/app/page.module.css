@@ -1,0 +1,33 @@
+.pageBg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  background: var(--black-5);
+}
+
+.contentWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.additionalPageBg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--orange-5);
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+@media (max-width: 1024px) {
+  .contentWrap {
+   flex-direction: column;
+    gap: 2rem;
+  }
+}

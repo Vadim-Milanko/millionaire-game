@@ -1,0 +1,21 @@
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: var(--black-5);
+}
+
+.contentWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .contentWrap {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
