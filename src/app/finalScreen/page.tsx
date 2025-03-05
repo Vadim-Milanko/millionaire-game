@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import TotalScore from '@/app/finalScreen/components/TotalScore/TotalScore';
 
-import handImg from '../../../public/hand.svg';
+import handImg from 'public/hand.svg';
 
 import styles from './page.module.css';
 

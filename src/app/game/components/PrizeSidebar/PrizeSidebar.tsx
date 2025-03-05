@@ -4,20 +4,23 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 import { USDFormatter } from '@/shared/utils/formatter';
-import gameConfig from '@/data/config.json';
 import { DeviceType } from '@/shared/interfaces/device';
 
 import useMediaQuery from '@/shared/hooks/useMediaQuery';
 import useGetScoreParams from '@/shared/hooks/useGetScoreParams';
 
-import menuIcon from '../../../../../public/menu.svg';
-import closeIcon from '../../../../../public/close.svg';
+import menuIcon from 'public/menu.svg';
+import closeIcon from 'public/close.svg';
 
 import styles from './PrizeSidebar.module.css';
 
-const PRIZE_LEVELS: number[] = gameConfig.prizeLevels.reverse();
+interface PrizeSidebarProps {
+  prizeLevels: number[];
+}
 
-export default function PrizeSidebar() {
+export default function PrizeSidebar(props: PrizeSidebarProps) {
+  const { prizeLevels } = props;
+
   const device: DeviceType = useMediaQuery();
   const { score } = useGetScoreParams();
 
@@ -52,7 +55,7 @@ export default function PrizeSidebar() {
 
       <div className={getSidebarStyles()}>
         <div className={styles.list}>
-          {PRIZE_LEVELS.map((prize) => {
+          {prizeLevels.map((prize) => {
             const activeStyles = prize === score ? styles.active : '';
             const disabledStyles = prize < score ? styles.disabled : '';
 

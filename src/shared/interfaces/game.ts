@@ -10,3 +10,9 @@ export interface Question {
   options: Option[];
   prize: number;
 }
+
+export interface QuestionsData {
+  questions: Question[];
+  totalQuestions: number;
+  prizeLevels: number[];
+}

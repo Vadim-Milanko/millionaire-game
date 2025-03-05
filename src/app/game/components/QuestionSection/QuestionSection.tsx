@@ -5,21 +5,27 @@ import { useState } from 'react';
 import { Question, Option } from '@/shared/interfaces/game';
 
 import { useRouter } from 'next/navigation';
-import gameConfig from '@/data/config.json';
 import { ROUTES } from '@/shared/constants/routes';
 
 import styles from './QuestionSection.module.css';
 
-export default function QuestionSection() {
+interface QuestionSectionProps {
+  questions: Question[];
+  totalQuestions: number;
+}
+
+export default function QuestionSection(props: QuestionSectionProps) {
   const router = useRouter();
+
+  const { questions, totalQuestions } = props;
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
 
-  const question = gameConfig.questions[currentQuestion];
+  const question = questions[currentQuestion];
 
   const handleAnswer = (answerId: string) => () => {
-    const question: Question = gameConfig.questions[currentQuestion];
+    const question: Question = questions[currentQuestion];
     const selectedOption = question.options.find((opt) => opt.id === answerId);
 
     if (selectedOption && selectedOption.isCorrect) {
@@ -27,7 +33,7 @@ export default function QuestionSection() {
 
       router.push(`${ROUTES.GAME}?score=${question.prize}`);
 
-      if (currentQuestion !== gameConfig.totalQuestions - 1) {
+      if (currentQuestion !== totalQuestions - 1) {
         setCurrentQuestion(currentQuestion + 1);
       } else {
         router.push(`${ROUTES.FINAL_SCREEN}?score=${question.prize}`);
