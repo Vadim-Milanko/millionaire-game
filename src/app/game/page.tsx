@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import PrizeSidebar from '@/app/game/components/PrizeSidebar/PrizeSidebar';
 import QuestionSection from '@/app/game/components/QuestionSection/QuestionSection';
 
@@ -8,7 +10,9 @@ export default function Game() {
     <div className={styles.page}>
       <QuestionSection />
 
-      <PrizeSidebar />
+      <Suspense>
+        <PrizeSidebar />
+      </Suspense>
     </div>
   );
 }
