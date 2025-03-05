@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Image from 'next/image';
 
 import TotalScore from '@/app/finalScreen/components/TotalScore/TotalScore';
@@ -12,7 +13,9 @@ export default function FinalScreen() {
       <div className={styles.contentWrap}>
         <Image src={handImg} width={624} height={367} layout="responsive" alt="My Icon" />
 
-        <TotalScore />
+        <Suspense>
+          <TotalScore />
+        </Suspense>
       </div>
     </div>
   );
