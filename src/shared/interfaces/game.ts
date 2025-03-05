@@ -1,9 +1,3 @@
-export interface QuestionsData {
-  questions: Question[];
-  totalQuestions: number;
-  prizeLevels: number[];
-}
-
 export interface Option {
   id: string;
   text: string;
@@ -15,4 +9,10 @@ export interface Question {
   text: string;
   options: Option[];
   prize: number;
+}
+
+export interface QuestionsData {
+  questions: Question[];
+  totalQuestions: number;
+  prizeLevels: number[];
 }
